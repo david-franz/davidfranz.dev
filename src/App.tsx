@@ -11,14 +11,13 @@ const HEADSHOT_SRC = '/headshot.jpg';
 
 const profile = {
   name: 'David Franz',
-  location: 'Sydney', // updated
+  location: 'Sydney',
   phone: '+61 425 419 084',
   email: 'davidfranznz@gmail.com',
   github: 'https://github.com/david-franz',
   linkedin: 'https://www.linkedin.com/in/david-franz-48b6a6301/',
   summary:
-    // appended hobbies to match your Markdown summary
-    'Full-stack software engineer focused on JVM backends and TypeScript frontends, with interests in AI, compilers, algorithms, and formal methods. I enjoy building reliable APIs, visual tooling, and language infrastructure. Outside of software, I enjoy hiking, piano, and 3D animation.',
+    'Full-stack software engineer focused on AI and LLM applications in Python, JVM backends, and TypeScript frontends, with interests in compilers, algorithms, and formal methods. I enjoy building reliable APIs, visual tooling, and language infrastructure. Outside of software, I enjoy hiking, piano, and 3D animation.',
 };
 
 // Reordered so second row is ML/AI, DevOps, Databases (as requested)
@@ -121,7 +120,21 @@ const projects = [
 ];
 
 const education = [
-  { title: 'Postgraduate Diploma in Artificial Intelligence', org: 'Victoria University of Wellington', year: '2025' },
+  {
+    title: 'Postgraduate Diploma in Artificial Intelligence',
+    org: 'Victoria University of Wellington',
+    year: '2025',
+    subjects: [
+      'Natural Language Processing (LLMs)',
+      'Neural Networks and Deep Learning',
+      'Evolutionary Computation',
+      'Big Data',
+      'Contemporary Topics in AI',
+      'Mathematics of AI',
+      'Applications of AI',
+      'Automated Program Reasoning',
+    ],
+  },
   { title: 'BSc in Computer Science & Mathematics', org: 'Victoria University of Wellington', year: '2021' },
 ];
 
@@ -179,7 +192,12 @@ export default function App() {
       lines.push(`- **[${p.name}](${p.link})** — ${p.blurb}` + (p.stack ? `  \n  *Stack:* ${p.stack}` : ''));
     });
     lines.push(`\n## Education`);
-    education.forEach(ed => lines.push(`- **${ed.title}** — ${ed.org} (${ed.year})`));
+    education.forEach(ed => {
+      lines.push(`- **${ed.title}** — ${ed.org} (${ed.year})`);
+      if ('subjects' in ed && Array.isArray(ed.subjects)) {
+        ed.subjects.forEach(subj => lines.push(`  - ${subj}`));
+      }
+    });
     return lines.join('\n');
   };
 
@@ -330,6 +348,13 @@ export default function App() {
             {education.map((ed) => (
               <li key={ed.title}>
                 <span className="font-semibold">{ed.title}</span> — {ed.org} ({ed.year})
+                {'subjects' in ed && Array.isArray(ed.subjects) && (
+                  <ul className="mt-1 ml-5 list-disc space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                    {ed.subjects.map(subject => (
+                      <li key={subject}>{subject}</li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
           </ul>

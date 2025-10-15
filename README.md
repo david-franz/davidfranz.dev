@@ -2,7 +2,7 @@
 Sydney · +61 425 419 084 · davidfranznz@gmail.com · [davidfranz.dev](https://davidfranz.dev) · [github.com/david-franz](https://github.com/david-franz) · [linkedin.com/in/david-franz-48b6a6301](https://www.linkedin.com/in/david-franz-48b6a6301/)
 
 ## Summary
-Full-stack software engineer focused on JVM backends and TypeScript frontends, with interests in AI, compilers, algorithms, and formal methods. I enjoy building reliable APIs, visual tooling, and language infrastructure. Outside of software, I enjoy hiking, piano, and 3D animation.
+Full-stack software engineer focused on AI and LLM applications in Python, JVM backends, and TypeScript frontends, with interests in compilers, algorithms, and formal methods. I enjoy building reliable APIs, visual tooling, and language infrastructure. Outside of software, I enjoy hiking, piano, and 3D animation.
 
 ## Skills
 - **Languages:** Java, Kotlin, JavaScript, TypeScript, Python, C, C++
@@ -58,4 +58,12 @@ Full-stack software engineer focused on JVM backends and TypeScript frontends, w
 
 ## Education
 - **Postgraduate Diploma in Artificial Intelligence** — Victoria University of Wellington, 2025  
+  - Natural Language Processing (LLMs)  
+  - Neural Networks and Deep Learning  
+  - Evolutionary Computation  
+  - Big Data  
+  - Contemporary Topics in AI  
+  - Mathematics of AI  
+  - Applications of AI  
+  - Automated Program Reasoning  
 - **BSc in Computer Science & Mathematics** — Victoria University of Wellington, 2021
