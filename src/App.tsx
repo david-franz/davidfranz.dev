@@ -78,24 +78,42 @@ const experience = [
 const projects = [
   {
     name: 'Flowtomic.ai',
+    link: 'https://flowtomic.ai',
     blurb:
       'Parent platform for the Flow*.dev tools — a unified umbrella for agentic workflows on the JVM, integrating the libraries and builders below.',
     stack: undefined,
   },
   {
     name: 'Flowlang.dev',
+    link: 'https://flowlang.dev',
     blurb:
       'Compiler for a sandboxed-by-default JVM language (ANTLR lexer/parser → bytecode with ASM). Functional style with declarative task orchestration; features validated via examples and tests.',
     stack: 'Java, Spring Boot, ANTLR, ASM, React, TypeScript, Azure',
   },
   {
+    name: 'Flowport.dev',
+    link: 'https://flowport.dev',
+    blurb:
+      'Gateway to leading LLM models with unified APIs, adaptive routing, and evaluation tooling for production-grade agents.',
+    stack: 'TypeScript, Node, Azure',
+  },
+  {
+    name: 'Flowknow.dev',
+    link: 'https://flowknow.dev',
+    blurb:
+      'Reusable knowledge bases that automatically build and refresh RAG datasets, indexes, and embeddings.',
+    stack: 'TypeScript, Python, Vector DBs',
+  },
+  {
     name: 'Flowgraph.dev',
+    link: 'https://flowgraph.dev',
     blurb:
       'Lightweight TypeScript D3 wrapper with React support; reusable graph features and a visual playground for interactive templates used to build Flowtomic’s visual workflows.',
     stack: 'React, TypeScript, Azure',
   },
   {
     name: 'Flowform.dev',
+    link: 'https://flowform.dev',
     blurb:
       'Lightweight form library and visual builder interoperable with Flowgraph (for custom nodes); supports multiple field renderers and grouping (containers/tabs).',
     stack: 'React, TypeScript, Azure',
@@ -153,9 +171,12 @@ export default function App() {
       e.bullets.forEach(b => lines.push(`- ${b}`));
     });
     lines.push(`\n## Projects`);
-    lines.push(`- **Flowtomic.ai** — Parent platform for the Flow*.dev tools.`);
-    projects.filter(p=>p.name!== 'Flowtomic.ai').forEach(p => {
-      lines.push(`- **${p.name}** — ${p.blurb}` + (p.stack ? `  \n  *Stack:* ${p.stack}` : ''));
+    const [primaryProject, ...childProjects] = projects;
+    if (primaryProject) {
+      lines.push(`- **[${primaryProject.name}](${primaryProject.link})** — ${primaryProject.blurb}` + (primaryProject.stack ? `  \n  *Stack:* ${primaryProject.stack}` : ''));
+    }
+    childProjects.forEach(p => {
+      lines.push(`- **[${p.name}](${p.link})** — ${p.blurb}` + (p.stack ? `  \n  *Stack:* ${p.stack}` : ''));
     });
     lines.push(`\n## Education`);
     education.forEach(ed => lines.push(`- **${ed.title}** — ${ed.org} (${ed.year})`));
@@ -281,6 +302,8 @@ export default function App() {
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 <Chip>Flowlang.dev</Chip>
+                <Chip>Flowport.dev</Chip>
+                <Chip>Flowknow.dev</Chip>
                 <Chip>Flowgraph.dev</Chip>
                 <Chip>Flowform.dev</Chip>
               </div>
@@ -288,7 +311,12 @@ export default function App() {
 
             {projects.filter(p => p.name !== 'Flowtomic.ai').map((p) => (
               <div key={p.name} className="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-5 bg-white dark:bg-neutral-900">
-                <h3 className="text-lg font-semibold flex items-center gap-2">{p.name}</h3>
+                <h3 className="text-lg font-semibold flex items-center gap-2">
+                  <a href={p.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:underline">
+                    {p.name}
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                </h3>
                 <p className="mt-2 text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">{p.blurb}</p>
                 {p.stack && <p className="mt-3 text-xs"><span className="font-semibold">Stack:</span> {p.stack}</p>}
               </div>

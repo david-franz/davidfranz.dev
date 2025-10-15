@@ -39,15 +39,21 @@ Full-stack software engineer focused on JVM backends and TypeScript frontends, w
 - Gained hands-on experience with formal methods, verification, and secure system design.
 
 ## Projects
-**Flowtomic.ai** — Visual agentic workflows on the JVM; umbrella for released OSS tools below.
+**[Flowtomic.ai](https://flowtomic.ai)** — Visual agentic workflows on the JVM; umbrella for released OSS tools below.
 
-- **Flowlang.dev** — Compiler for a sandboxed-by-default JVM language (ANTLR lexer/parser → bytecode with ASM). Functional style with declarative task orchestration; features validated via examples and tests.  
+- **[Flowlang.dev](https://flowlang.dev)** — Compiler for a sandboxed-by-default JVM language (ANTLR lexer/parser → bytecode with ASM). Functional style with declarative task orchestration; features validated via examples and tests.  
   *Stack:* Java, Spring Boot, ANTLR, ASM, React, TypeScript, Azure.
 
-- **Flowgraph.dev** — Lightweight TypeScript D3 wrapper with React support; reusable graph features and a visual playground for interactive templates used to build Flowtomic’s visual workflows.  
+- **[Flowport.dev](https://flowport.dev)** — Gateway to leading LLM models with unified APIs, adaptive routing, and evaluation workflows for production agents.  
+  *Stack:* TypeScript, Node, Azure.
+
+- **[Flowknow.dev](https://flowknow.dev)** — Reusable knowledge bases that automatically build and refresh RAG-ready datasets, indexes, and embeddings.  
+  *Stack:* TypeScript, Python, Vector DBs.
+
+- **[Flowgraph.dev](https://flowgraph.dev)** — Lightweight TypeScript D3 wrapper with React support; reusable graph features and a visual playground for interactive templates used to build Flowtomic’s visual workflows.  
   *Stack:* React, TypeScript, Azure.
 
-- **Flowform.dev** — Lightweight form library and visual builder interoperable with Flowgraph (for custom nodes); supports multiple field renderers and grouping (containers/tabs).  
+- **[Flowform.dev](https://flowform.dev)** — Lightweight form library and visual builder interoperable with Flowgraph (for custom nodes); supports multiple field renderers and grouping (containers/tabs).  
   *Stack:* React, TypeScript, Azure.
 
 ## Education
