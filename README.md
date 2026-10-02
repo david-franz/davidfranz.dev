@@ -34,7 +34,7 @@ Software engineering consultant working with a major Australian radiology compan
 - Implemented new Angular pages and components with cross-device responsiveness.  
 - Migrated legacy Knockout/HTML/JS pages and renderers to modern Angular.
 
-**Software Engineer — Solnet (acquired by Accenture)**  
+**Product Software Engineer — Solnet Solutions**  
 *Nov 2021 – May 2024 · Wellington*  
 *Stack:* Java, Vert.x, MariaDB, TypeScript, React, Docker, Azure  
 - Built a formal specification language with expression evaluation, type definitions, variable/object handling, subprocess management, grammar implementation, and AST generation/manipulation.  

@@ -65,8 +65,8 @@ const experience = [
     ],
   },
   {
-    role: 'Software Engineer',
-    company: 'Solnet (acquired by Accenture)',
+    role: 'Product Software Engineer',
+    company: 'Solnet Solutions',
     period: 'Nov 2021 – May 2024',
     location: 'Wellington',
     stack: 'Java, Vert.x, MariaDB, TypeScript, React, Docker, Azure',
