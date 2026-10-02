@@ -108,13 +108,6 @@ const projects = [
     stack: 'TypeScript, Node, Hono, MCP, Git',
   },
   {
-    name: 'CNN Skin Cancer Detector',
-    link: 'https://github.com/david-franz/cnn-skin-cancer-detector',
-    blurb:
-      'CNNs for classifying skin lesions in the ISIC dataset into 9 conditions, grouped as cancerous, precancerous, or benign. Reproduced a baseline CNN from the literature, then designed a parallel-kernel CNN (five kernel sizes, 3 to 27) that raised 9-class validation accuracy from 58.9% to 63.2% and cancer recall from 79% to 84%. Accompanied by a written report covering false negatives, dataset bias, and the safety risks of the approach.',
-    stack: 'Python, PyTorch, Jupyter, Google Colab',
-  },
-  {
     name: 'flowlang',
     link: 'https://github.com/david-franz/flowlang.dev',
     blurb:
@@ -134,6 +127,13 @@ const projects = [
     blurb:
       'Deep-simulation city builder inspired by Cities: Skylines and SimCity 4. Simulates cities down to the household and models each trip — mode choice, transfers, congestion — across a region of cities that trade and commute. Soundtrack generated programmatically with strobe.',
     stack: 'C#, Godot, Blender, Python',
+  },
+  {
+    name: 'CNN Skin Cancer Detector',
+    link: 'https://github.com/david-franz/cnn-skin-cancer-detector',
+    blurb:
+      'CNNs for classifying skin lesions in the ISIC dataset into 9 conditions, grouped as cancerous, precancerous, or benign. Reproduced a baseline CNN from the literature, then designed a parallel-kernel CNN (five kernel sizes, 3 to 27) that raised 9-class validation accuracy from 58.9% to 63.2% and cancer recall from 79% to 84%. Accompanied by a written report covering false negatives, dataset bias, and the safety risks of the approach.',
+    stack: 'Python, PyTorch, Jupyter, Google Colab',
   },
 ];
 
