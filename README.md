@@ -2,17 +2,29 @@
 Sydney · +61 425 419 084 · davidfranznz@gmail.com · [davidfranz.dev](https://davidfranz.dev) · [github.com/david-franz](https://github.com/david-franz) · [linkedin.com/in/david-franz-48b6a6301](https://www.linkedin.com/in/david-franz-48b6a6301/)
 
 ## Summary
-Full-stack software engineer focused on AI and LLM applications in Python, JVM backends, and TypeScript frontends, with interests in compilers, algorithms, and formal methods. I enjoy building reliable APIs, visual tooling, and language infrastructure. Outside of software, I enjoy hiking, piano, and 3D animation.
+Full-stack software engineer focused on AI and LLM applications in Python, JVM backends, and TypeScript frontends, with interests in compilers, algorithms, and formal methods. I enjoy building reliable APIs, visual tooling, and language infrastructure. Outside of software, I enjoy hiking, making music, and game development.
 
 ## Skills
 - **Languages:** Java, Kotlin, JavaScript, TypeScript, Python, C, C++
 - **Frontend:** React, Angular, Knockout, HTML, CSS
 - **Backend:** Spring, Spring Boot, Node, Express, Vert.x, FastAPI
 - **ML/AI:** PyTorch, TensorFlow, Keras, scikit-learn, LoRA, HuggingFace, LangChain, NLTK
-- **DevOps/Platforms:** Linux, Git, Docker, AWS, Azure
-- **Databases:** PostgreSQL, MongoDB, MariaDB
+- **DevOps/Platforms:** Linux, Git, Docker, Terraform, AWS, SQS, Azure
+- **Databases:** PostgreSQL, Alembic, MongoDB, MariaDB
 
 ## Experience
+**Technical Consultant — Palo IT**  
+*Jan 2026 – Present · Sydney*  
+*Stack:* Python, PostgreSQL, Alembic, AWS (Lambda, SQS), Terraform, React, TypeScript  
+Software engineering consultant working with a major Australian radiology company to develop a new RIS (Radiology Information System).
+- Contributed to the system design of the RIS, helping design a variety of key services and features end to end.  
+- Worked with key stakeholders to gather requirements and turn them into solutions.  
+- Built and maintained the core data service in Python and PostgreSQL (Alembic), used for authoring data consumed by other services and kept in sync via SQS and a transactional outbox; deployed as a Lambda on AWS.  
+- Built and maintained a room note classifier service that dynamically ingests notes from the existing RIS calendar and converts raw notes into rule assignments, staff assignments, and room blocks.  
+- Built a responsive React application for managing the core data service.  
+- Built a data seed ingestion pipeline from static CSV and API data.  
+- Built Terraform pipelines for deploying services.
+
 **Software Engineer — Servicely**  
 *July 2024 – April 2025 · Sydney*  
 *Stack:* Java, Kotlin, Spring, PostgreSQL, TypeScript, Angular, Knockout, AWS  
@@ -39,31 +51,17 @@ Full-stack software engineer focused on AI and LLM applications in Python, JVM b
 - Gained hands-on experience with formal methods, verification, and secure system design.
 
 ## Projects
-**[Flowtomic.ai](https://flowtomic.ai)** — Visual agentic workflows on the JVM; umbrella for released OSS tools below.
+- **[ctx-sys](https://github.com/david-franz/ctx-sys)** — Local hybrid RAG over a code knowledge graph. Indexes a codebase with tree-sitter, embeddings, and a relationship graph, then serves precise context to any AI assistant over MCP — fusing keyword (FTS5), vector, and graph search with reciprocal rank fusion. Local-first via Ollama.  
+  *Stack:* TypeScript, Node, SQLite (FTS5, sqlite-vec), tree-sitter, Ollama, MCP.
 
-- **[Flowlang.dev](https://flowlang.dev)** — Compiler for a sandboxed-by-default JVM language (ANTLR lexer/parser → bytecode with ASM). Functional style with declarative task orchestration; features validated via examples and tests.  
-  *Stack:* Java, Spring Boot, ANTLR, ASM, React, TypeScript, Azure.
+- **[yaao](https://github.com/david-franz/yaao)** — Plans, converts, and runs multi-agent software work across parallel git worktrees, with dependency-aware branching, topological merge-back, and validation-gated merges. Agent-agnostic (Claude Code, Cursor, Copilot, Codex, raw API) and MCP-first; ships a CLI, an MCP server, and a live web viewer.  
+  *Stack:* TypeScript, Node, Hono, MCP, Git.
 
-- **[Flowport.dev](https://flowport.dev)** — Gateway to leading LLM models with unified APIs, adaptive routing, and evaluation workflows for production agents.  
-  *Stack:* TypeScript, Node, Azure.
+- **[strobe](https://github.com/david-franz/strobe)** — Live-coding music library: patterns and effects are written in TypeScript using the TidalCycles pattern model and hot-reloaded while playing, while a Rust engine renders synthesis, a per-track effects rack, and sampling on a real-time audio thread.  
+  *Stack:* Rust, TypeScript.
 
-- **[Flowknow.dev](https://flowknow.dev)** — Reusable knowledge bases that automatically build and refresh RAG-ready datasets, indexes, and embeddings.  
-  *Stack:* TypeScript, Python, Vector DBs.
-
-- **[Flowgraph.dev](https://flowgraph.dev)** — Lightweight TypeScript D3 wrapper with React support; reusable graph features and a visual playground for interactive templates used to build Flowtomic’s visual workflows.  
-  *Stack:* React, TypeScript, Azure.
-
-- **[Flowform.dev](https://flowform.dev)** — Lightweight form library and visual builder interoperable with Flowgraph (for custom nodes); supports multiple field renderers and grouping (containers/tabs).  
-  *Stack:* React, TypeScript, Azure.
+- **[Meridian](https://github.com/david-franz/meridian)** — Deep-simulation city builder inspired by Cities: Skylines and SimCity 4. Simulates cities down to the household and models each trip — mode choice, transfers, congestion — across a region of cities that trade and commute. Soundtrack generated programmatically with strobe.  
+  *Stack:* C#, Godot, Blender, Python.
 
 ## Education
-- **Postgraduate Diploma in Artificial Intelligence** — Victoria University of Wellington, 2025  
-  - Natural Language Processing (LLMs)  
-  - Neural Networks and Deep Learning  
-  - Evolutionary Computation  
-  - Big Data  
-  - Contemporary Topics in AI  
-  - Mathematics of AI  
-  - Applications of AI  
-  - Automated Program Reasoning  
 - **BSc in Computer Science & Mathematics** — Victoria University of Wellington, 2021

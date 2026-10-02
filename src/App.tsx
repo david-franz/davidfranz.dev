@@ -7,7 +7,7 @@ import {
   Code2, Database, Boxes, Cpu, Server, BookOpen, Sun, Moon
 } from 'lucide-react';
 
-const HEADSHOT_SRC = '/headshot.jpg';
+const HEADSHOT_SRC = '/headshot.png';
 
 const profile = {
   name: 'David Franz',
@@ -17,7 +17,7 @@ const profile = {
   github: 'https://github.com/david-franz',
   linkedin: 'https://www.linkedin.com/in/david-franz-48b6a6301/',
   summary:
-    'Full-stack software engineer focused on AI and LLM applications in Python, JVM backends, and TypeScript frontends, with interests in compilers, algorithms, and formal methods. I enjoy building reliable APIs, visual tooling, and language infrastructure. Outside of software, I enjoy hiking, piano, and 3D animation.',
+    'Full-stack software engineer focused on AI and LLM applications in Python, JVM backends, and TypeScript frontends, with interests in compilers, algorithms, and formal methods. I enjoy building reliable APIs, visual tooling, and language infrastructure. Outside of software, I enjoy hiking, making music, and game development.',
 };
 
 // Reordered so second row is ML/AI, DevOps, Databases (as requested)
@@ -26,12 +26,30 @@ const skills = [
   { title: 'Frontend', icon: <Boxes className='w-4 h-4' />, items: ['Angular', 'React', 'Knockout', 'HTML', 'CSS'] },
   { title: 'Backend', icon: <Server className='w-4 h-4' />, items: ['Spring', 'Spring Boot', 'Node', 'Express', 'Vert.x', 'FastAPI'] },
   { title: 'ML/AI', icon: <Cpu className='w-4 h-4' />, items: ['PyTorch', 'TensorFlow', 'Keras', 'scikit-learn', 'LoRA', 'HuggingFace', 'LangChain', 'NLTK'] },
-  { title: 'DevOps', icon: <BookOpen className='w-4 h-4' />, items: ['Linux', 'Git', 'Docker', 'AWS', 'Azure'] },
-  { title: 'Databases', icon: <Database className='w-4 h-4' />, items: ['PostgreSQL', 'MongoDB', 'MariaDB'] },
+  { title: 'DevOps', icon: <BookOpen className='w-4 h-4' />, items: ['Linux', 'Git', 'Docker', 'Terraform', 'AWS', 'SQS', 'Azure'] },
+  { title: 'Databases', icon: <Database className='w-4 h-4' />, items: ['PostgreSQL', 'Alembic', 'MongoDB', 'MariaDB'] },
 ];
 
 // Added `stack` for each job
 const experience = [
+  {
+    role: 'Technical Consultant',
+    company: 'Palo IT',
+    period: 'Jan 2026 – Present',
+    location: 'Sydney',
+    stack: 'Python, PostgreSQL, Alembic, AWS (Lambda, SQS), Terraform, React, TypeScript',
+    summary:
+      'Software engineering consultant working with a major Australian radiology company to develop a new RIS (Radiology Information System).',
+    bullets: [
+      'Contributed to the system design of the RIS, helping design a variety of key services and features end to end.',
+      'Worked with key stakeholders to gather requirements and turn them into solutions.',
+      'Built and maintained the core data service in Python and PostgreSQL (Alembic), used for authoring data consumed by other services and kept in sync via SQS and a transactional outbox; deployed as a Lambda on AWS.',
+      'Built and maintained a room note classifier service that dynamically ingests notes from the existing RIS calendar and converts raw notes into rule assignments, staff assignments, and room blocks.',
+      'Built a responsive React application for managing the core data service.',
+      'Built a data seed ingestion pipeline from static CSV and API data.',
+      'Built Terraform pipelines for deploying services.',
+    ],
+  },
   {
     role: 'Software Engineer',
     company: 'Servicely',
@@ -76,65 +94,36 @@ const experience = [
 
 const projects = [
   {
-    name: 'Flowtomic.ai',
-    link: 'https://flowtomic.ai',
+    name: 'ctx-sys',
+    link: 'https://github.com/david-franz/ctx-sys',
     blurb:
-      'Parent platform for the Flow*.dev tools — a unified umbrella for agentic workflows on the JVM, integrating the libraries and builders below.',
-    stack: undefined,
+      'Local hybrid RAG over a code knowledge graph. Indexes a codebase with tree-sitter, embeddings, and a relationship graph, then serves precise context to any AI assistant over MCP — fusing keyword (FTS5), vector, and graph search with reciprocal rank fusion. Local-first via Ollama.',
+    stack: 'TypeScript, Node, SQLite (FTS5, sqlite-vec), tree-sitter, Ollama, MCP',
   },
   {
-    name: 'Flowlang.dev',
-    link: 'https://flowlang.dev',
+    name: 'yaao',
+    link: 'https://github.com/david-franz/yaao',
     blurb:
-      'Compiler for a sandboxed-by-default JVM language (ANTLR lexer/parser → bytecode with ASM). Functional style with declarative task orchestration; features validated via examples and tests.',
-    stack: 'Java, Spring Boot, ANTLR, ASM, React, TypeScript, Azure',
+      'Plans, converts, and runs multi-agent software work across parallel git worktrees, with dependency-aware branching, topological merge-back, and validation-gated merges. Agent-agnostic (Claude Code, Cursor, Copilot, Codex, raw API) and MCP-first; ships a CLI, an MCP server, and a live web viewer.',
+    stack: 'TypeScript, Node, Hono, MCP, Git',
   },
   {
-    name: 'Flowport.dev',
-    link: 'https://flowport.dev',
+    name: 'strobe',
+    link: 'https://github.com/david-franz/strobe',
     blurb:
-      'Gateway to leading LLM models with unified APIs, adaptive routing, and evaluation tooling for production-grade agents.',
-    stack: 'TypeScript, Node, Azure',
+      'Live-coding music library: patterns and effects are written in TypeScript using the TidalCycles pattern model and hot-reloaded while playing, while a Rust engine renders synthesis, a per-track effects rack, and sampling on a real-time audio thread.',
+    stack: 'Rust, TypeScript',
   },
   {
-    name: 'Flowknow.dev',
-    link: 'https://flowknow.dev',
+    name: 'Meridian',
+    link: 'https://github.com/david-franz/meridian',
     blurb:
-      'Reusable knowledge bases that automatically build and refresh RAG datasets, indexes, and embeddings.',
-    stack: 'TypeScript, Python, Vector DBs',
-  },
-  {
-    name: 'Flowgraph.dev',
-    link: 'https://flowgraph.dev',
-    blurb:
-      'Lightweight TypeScript D3 wrapper with React support; reusable graph features and a visual playground for interactive templates used to build Flowtomic’s visual workflows.',
-    stack: 'React, TypeScript, Azure',
-  },
-  {
-    name: 'Flowform.dev',
-    link: 'https://flowform.dev',
-    blurb:
-      'Lightweight form library and visual builder interoperable with Flowgraph (for custom nodes); supports multiple field renderers and grouping (containers/tabs).',
-    stack: 'React, TypeScript, Azure',
+      'Deep-simulation city builder inspired by Cities: Skylines and SimCity 4. Simulates cities down to the household and models each trip — mode choice, transfers, congestion — across a region of cities that trade and commute. Soundtrack generated programmatically with strobe.',
+    stack: 'C#, Godot, Blender, Python',
   },
 ];
 
 const education = [
-  {
-    title: 'Postgraduate Diploma in Artificial Intelligence',
-    org: 'Victoria University of Wellington',
-    year: '2025',
-    subjects: [
-      'Natural Language Processing (LLMs)',
-      'Neural Networks and Deep Learning',
-      'Evolutionary Computation',
-      'Big Data',
-      'Contemporary Topics in AI',
-      'Mathematics of AI',
-      'Applications of AI',
-      'Automated Program Reasoning',
-    ],
-  },
   { title: 'BSc in Computer Science & Mathematics', org: 'Victoria University of Wellington', year: '2021' },
 ];
 
@@ -181,14 +170,11 @@ export default function App() {
       lines.push(`\n**${e.role} — ${e.company}**`);
       lines.push(`*${e.period} · ${e.location}*`);
       if ((e as any).stack) lines.push(`*Stack:* ${(e as any).stack}`); // include stack lines in Markdown too
+      if ('summary' in e && e.summary) lines.push(e.summary);
       e.bullets.forEach(b => lines.push(`- ${b}`));
     });
     lines.push(`\n## Projects`);
-    const [primaryProject, ...childProjects] = projects;
-    if (primaryProject) {
-      lines.push(`- **[${primaryProject.name}](${primaryProject.link})** — ${primaryProject.blurb}` + (primaryProject.stack ? `  \n  *Stack:* ${primaryProject.stack}` : ''));
-    }
-    childProjects.forEach(p => {
+    projects.forEach(p => {
       lines.push(`- **[${p.name}](${p.link})** — ${p.blurb}` + (p.stack ? `  \n  *Stack:* ${p.stack}` : ''));
     });
     lines.push(`\n## Education`);
@@ -301,6 +287,9 @@ export default function App() {
                 {('stack' in e) && e.stack && (
                   <p className="text-xs mt-1"><span className="font-semibold">Stack:</span> {e.stack}</p>
                 )}
+                {('summary' in e) && e.summary && (
+                  <p className="mt-3 text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">{e.summary}</p>
+                )}
                 <ul className="mt-3 list-disc list-inside space-y-1.5 text-sm">
                   {e.bullets.map((b, i) => (
                     <li key={i}>{b}</li>
@@ -313,21 +302,7 @@ export default function App() {
 
         <Section id="projects" title="Projects">
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="md:col-span-2 rounded-2xl border border-neutral-200 dark:border-neutral-800 p-5 bg-white dark:bg-neutral-900">
-              <h3 className="text-xl font-semibold">Flowtomic.ai — parent platform</h3>
-              <p className="mt-2 text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                Parent platform for the Flow*.dev tools — a unified umbrella for agentic workflows on the JVM, integrating the libraries and builders below.
-              </p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                <Chip>Flowlang.dev</Chip>
-                <Chip>Flowport.dev</Chip>
-                <Chip>Flowknow.dev</Chip>
-                <Chip>Flowgraph.dev</Chip>
-                <Chip>Flowform.dev</Chip>
-              </div>
-            </div>
-
-            {projects.filter(p => p.name !== 'Flowtomic.ai').map((p) => (
+            {projects.map((p) => (
               <div key={p.name} className="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-5 bg-white dark:bg-neutral-900">
                 <h3 className="text-lg font-semibold flex items-center gap-2">
                   <a href={p.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:underline">
