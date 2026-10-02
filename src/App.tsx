@@ -125,7 +125,7 @@ const projects = [
     name: 'Meridian',
     link: undefined,
     blurb:
-      'Deep-simulation city builder inspired by Cities: Skylines and SimCity 4. Simulates cities down to the household and models each trip — mode choice, transfers, congestion — across a region of cities that trade and commute. Soundtrack generated programmatically with strobe.',
+      'Deep-simulation city builder inspired by Cities: Skylines and SimCity. Simulates cities down to the household and models each trip — mode choice, transfers, congestion — across a region of cities that trade and commute. Soundtrack generated programmatically with strobe.',
     stack: 'C#, Godot, Blender, Python',
   },
   {

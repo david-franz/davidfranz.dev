@@ -63,7 +63,7 @@ Software engineering consultant working with a major Australian radiology compan
 - **[strobe](https://github.com/david-franz/strobe)** — Live-coding music library: patterns and effects are written in TypeScript using the TidalCycles pattern model and hot-reloaded while playing, while a Rust engine renders synthesis, a per-track effects rack, and sampling on a real-time audio thread.  
   *Stack:* Rust, TypeScript.
 
-- **Meridian** — Deep-simulation city builder inspired by Cities: Skylines and SimCity 4. Simulates cities down to the household and models each trip — mode choice, transfers, congestion — across a region of cities that trade and commute. Soundtrack generated programmatically with strobe.  
+- **Meridian** — Deep-simulation city builder inspired by Cities: Skylines and SimCity. Simulates cities down to the household and models each trip — mode choice, transfers, congestion — across a region of cities that trade and commute. Soundtrack generated programmatically with strobe.  
   *Stack:* C#, Godot, Blender, Python.
 
 - **[CNN Skin Cancer Detector](https://github.com/david-franz/cnn-skin-cancer-detector)** — CNNs for classifying skin lesions in the ISIC dataset into 9 conditions, grouped as cancerous, precancerous, or benign. Reproduced a baseline CNN from the literature, then designed a parallel-kernel CNN (five kernel sizes, 3 to 27) that raised 9-class validation accuracy from 58.9% to 63.2% and cancer recall from 79% to 84%. Accompanied by a written report covering false negatives, dataset bias, and the safety risks of the approach.  
