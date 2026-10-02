@@ -26,7 +26,7 @@ const skills = [
   { title: 'Frontend', icon: <Boxes className='w-4 h-4' />, items: ['Angular', 'React', 'Knockout', 'HTML', 'CSS'] },
   { title: 'Backend', icon: <Server className='w-4 h-4' />, items: ['Spring', 'Spring Boot', 'Node', 'Express', 'Vert.x', 'FastAPI'] },
   { title: 'ML/AI', icon: <Cpu className='w-4 h-4' />, items: ['PyTorch', 'TensorFlow', 'Keras', 'scikit-learn', 'LoRA', 'HuggingFace', 'LangChain', 'NLTK'] },
-  { title: 'DevOps', icon: <BookOpen className='w-4 h-4' />, items: ['Linux', 'Git', 'Docker', 'Terraform', 'AWS', 'SQS', 'Azure'] },
+  { title: 'DevOps', icon: <BookOpen className='w-4 h-4' />, items: ['Linux', 'Git', 'Docker', 'Terraform', 'AWS', 'Azure'] },
   { title: 'Databases', icon: <Database className='w-4 h-4' />, items: ['PostgreSQL', 'Alembic', 'MongoDB', 'MariaDB'] },
 ];
 
@@ -108,6 +108,20 @@ const projects = [
     stack: 'TypeScript, Node, Hono, MCP, Git',
   },
   {
+    name: 'CNN Skin Cancer Detector',
+    link: 'https://github.com/david-franz/cnn-skin-cancer-detector',
+    blurb:
+      'CNNs for classifying skin lesions in the ISIC dataset into 9 conditions, grouped as cancerous, precancerous, or benign. Reproduced a baseline CNN from the literature, then designed a parallel-kernel CNN (five kernel sizes, 3 to 27) that raised 9-class validation accuracy from 58.9% to 63.2% and cancer recall from 79% to 84%. Accompanied by a written report covering false negatives, dataset bias, and the safety risks of the approach.',
+    stack: 'Python, PyTorch, Jupyter, Google Colab',
+  },
+  {
+    name: 'flowlang',
+    link: 'https://github.com/david-franz/flowlang.dev',
+    blurb:
+      'Compiler for a small, strongly-typed JVM language (ANTLR4 grammar → typed AST → bytecode via ASM) blending functional collections, structural records, pattern matching, and declarative task orchestration. Includes a web playground backed by a Spring Boot run API, with hundreds of categorized tests.',
+    stack: 'Java, ANTLR, ASM, Spring Boot, React, TypeScript',
+  },
+  {
     name: 'strobe',
     link: 'https://github.com/david-franz/strobe',
     blurb:
@@ -116,7 +130,7 @@ const projects = [
   },
   {
     name: 'Meridian',
-    link: 'https://github.com/david-franz/meridian',
+    link: undefined,
     blurb:
       'Deep-simulation city builder inspired by Cities: Skylines and SimCity 4. Simulates cities down to the household and models each trip — mode choice, transfers, congestion — across a region of cities that trade and commute. Soundtrack generated programmatically with strobe.',
     stack: 'C#, Godot, Blender, Python',
@@ -175,7 +189,7 @@ export default function App() {
     });
     lines.push(`\n## Projects`);
     projects.forEach(p => {
-      lines.push(`- **[${p.name}](${p.link})** — ${p.blurb}` + (p.stack ? `  \n  *Stack:* ${p.stack}` : ''));
+      lines.push(`- **${p.link ? `[${p.name}](${p.link})` : p.name}** — ${p.blurb}` + (p.stack ? `  \n  *Stack:* ${p.stack}` : ''));
     });
     lines.push(`\n## Education`);
     education.forEach(ed => {
@@ -305,10 +319,12 @@ export default function App() {
             {projects.map((p) => (
               <div key={p.name} className="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-5 bg-white dark:bg-neutral-900">
                 <h3 className="text-lg font-semibold flex items-center gap-2">
-                  <a href={p.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:underline">
-                    {p.name}
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
+                  {p.link ? (
+                    <a href={p.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:underline">
+                      {p.name}
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  ) : p.name}
                 </h3>
                 <p className="mt-2 text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">{p.blurb}</p>
                 {p.stack && <p className="mt-3 text-xs"><span className="font-semibold">Stack:</span> {p.stack}</p>}
