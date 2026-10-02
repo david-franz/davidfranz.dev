@@ -51,7 +51,7 @@ const experience = [
     ],
   },
   {
-    role: 'Software Engineer',
+    role: 'Full Stack Software Engineer',
     company: 'Servicely',
     period: 'July 2024 – April 2025',
     location: 'Sydney',

@@ -25,7 +25,7 @@ Software engineering consultant working with a major Australian radiology compan
 - Built a data seed ingestion pipeline from static CSV and API data.  
 - Built Terraform pipelines for deploying services.
 
-**Software Engineer — Servicely**  
+**Full Stack Software Engineer — Servicely**  
 *July 2024 – April 2025 · Sydney*  
 *Stack:* Java, Kotlin, Spring, PostgreSQL, TypeScript, Angular, Knockout, AWS  
 - Maintained and enhanced existing backend REST APIs.  
